@@ -17,6 +17,8 @@ The following image shows the web application's appearance and functionality:
  
 https://github.com/NataVenk/password-generator
 
+https://natavenk.github.io/password-generator/
+
 
 
 ## Credits
