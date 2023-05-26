@@ -53,19 +53,24 @@ var userChoice = window.confirm("Would you like to include numbers");
 if (userChoice){
    passCreated.push(...numbers);
 }
+if (passCreated<=0){
+  return "You have to choose at least one"
+}
 return passCreated
 
 }
 function createPassword(){
-   var passCreated = creatingPool();
   var passLength = setPasslength();
+   var passCreated = creatingPool();
+  var  stringPass = " ";
   const userPass = [ ];
+  // var passOutput = " ";
 for (let i=0; i<passLength; i++){
   //1
   const index = Math.floor(Math.random()*passCreated.length)
   const char = passCreated[index]
   userPass.push(char)
-
+  stringPass = userPass.join("");
   //2
   // const char = passCreated[Math.floor(Math.random()*passCreated.length)]
   // userPass.push(char)
@@ -75,7 +80,7 @@ for (let i=0; i<passLength; i++){
   // userPass.push(passCreated[Math.floor(Math.random()*passCreated.length)])
 }
   
-    
+  return stringPass;
  
 
 
