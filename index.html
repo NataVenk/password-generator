@@ -14,14 +14,16 @@
   
         <h1> Random Password <br> <span>Generator</span></h1>
         <div class="card-main">
-          <input type = "text" id = "password" >
-          <!-- <img src=""> -->
+          <input type = "text" class="source"  id = "password" >
+          <!-- <img src="" onclick = "copyPassword()"> -->
+          <!-- <button onclick="copyPassword()">Copy text</button> -->
+          <button onclick = "copyPassword()"><img src="./Assets/images/copy.png" ></button>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button onclick="writePassword()"> <img src="./Assets/images/create.png"> Create Password</button>
         </div>
       </div>
-      
+     
   
     </div>
     

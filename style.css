@@ -56,6 +56,37 @@ max-width: 700px;
   letter-spacing: -2px;
   text-transform: uppercase;
 }
+.card-main source{
+  height: 50px;
+}
+.card-main img{
+  width: 50px;
+  cursor: pointer;
+}
+.card-main input{
+  /* border:0;
+  outline:0; */
+  font-size: 24px;
+}
+.card-footer button img{
+  width: 50px;
+cursor: pointer;
+margin: 3px;
+}
+
+.card-footer button{
+  border:0;
+  outline:0;
+  background:hsl(0, 0%, 100%);
+  font-size: 22px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
 /* .card-header::after {
   content: " ";
   display: block;

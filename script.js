@@ -7,10 +7,7 @@ var specialChar = ["@","#","&","*","!"]
 
 console.log("is it  working?")
 
-// var lowCase = "abcdefghij"
-// var upCase = "ABCDEFGHIJ"
-// var num = "1234567890"
-// var spChar = "@#&*!"
+
 // Write password to the #password input
 function writePassword() {
   var password = createPassword();
@@ -20,8 +17,10 @@ function writePassword() {
   passwordText.value = password;
 
   return password;
+  
 
 }
+
 function setPasslength(){
   var passLength = window.prompt("How long do you want your password to be?");
   if (passLength<8 || passLength>128){
@@ -34,7 +33,7 @@ function setPasslength(){
 function creatingPool(){
 
   const passCreated = [ ];
-  var userChoice = window.confirm("Would you like to include low case letters");
+  var userChoice = window.confirm("Would you like to include low case letters?");
 if (userChoice){
   // var passCreated  = passCreated.concat(lowerCase);
   // //////////
@@ -44,14 +43,18 @@ if (userChoice){
   passCreated.push(...lowerCase);
 }
 //ask user  about upper case
-var userChoice = window.confirm("Would you like to include UPPER case letters");
+var userChoice = window.confirm("Would you like to include UPPER case letters?");
 if (userChoice){
    passCreated.push(...upperCase);
 }
 
-var userChoice = window.confirm("Would you like to include numbers");
+var userChoice = window.confirm("Would you like to include numbers?");
 if (userChoice){
    passCreated.push(...numbers);
+}
+var userChoice = window.confirm("Would you like to include symbols?");
+if (userChoice){
+   passCreated.push(...specialChar);
 }
 if (passCreated<=0){
   return "You have to choose at least one"
@@ -64,7 +67,7 @@ function createPassword(){
    var passCreated = creatingPool();
   var  stringPass = " ";
   const userPass = [ ];
-  // var passOutput = " ";
+  
 for (let i=0; i<passLength; i++){
   //1
   const index = Math.floor(Math.random()*passCreated.length)
@@ -86,7 +89,25 @@ for (let i=0; i<passLength; i++){
 
 }
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
+
+// ClipboardEvent(copy)
+function copyPassword() {
+  // Get the text field
+  var copyPass = document.getElementById("password");
+
+  // Select the text field
+  copyPass.select();
+  copyPass.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyPass.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyPass.value);
+}
+
+
 
 
 ///
